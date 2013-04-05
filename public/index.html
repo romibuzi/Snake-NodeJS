@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Websocket Snake Experiment</title>
+	<link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<script defer type="text/javascript" src="js/jquery.js"></script>
+    <script defer type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script defer type="text/javascript" src="js/jquery.lettering.js"></script>
+	<script defer type="text/javascript" src="http://localhost:5000/socket.io/socket.io.js"></script>
+	<script defer type="text/javascript" src="js/client.js"></script>
+
+	
+</head>
+<body>
+    <div id="container">
+        <h1>
+            Snake Experiment
+        </h1>
+        <div id="special-bonus">
+
+        </div>
+        <canvas id="stage" width="500" height="500">
+            Canvas not supported
+        </canvas>
+        <div id="eventboard">
+            <h2>Évènements</h2>
+            <ul id="event-list">
+                <!-- liste qui va se remplir des différents évènements qui ont lieux sur le plateau de jeu -->
+            </ul>
+        </div>
+        <div id="scoreboard">
+            <h2>Scores </h2>
+            <ul id="player-list">
+                <!-- liste qui va se remplir des différents joueurs qui sont en train de jouer au snake -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- petit plugin jquery pour styliser le titre de la page -->
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            $("#container h1").lettering('words');
+        });
+    </script>
+</body>
+</html>
