@@ -41,7 +41,7 @@ Snake.prototype.reset = function ()
     for (var i=this.currentlength; i>0; i--){
         this.elements.push({x: -i, y: rand});
     }
-}
+};
 
 // Fonction qui splite les différents blocs du corps du snake
 Snake.prototype.doStep = function ()
@@ -59,7 +59,8 @@ Snake.prototype.moveBlock = function(i)
     // chaque bloc prend pour position la position du bloc suivant (effet chenille)
     this.elements[i].x = this.elements[i + 1].x;
     this.elements[i].y = this.elements[i + 1].y;
-}
+};
+
 // fonction qui déplace la tête du snake
 Snake.prototype.moveHead = function(i, direction)
 {
@@ -106,7 +107,7 @@ Snake.prototype.moveHead = function(i, direction)
     {
         head.y = this.STAGE_HEIGHT;
     }
-}
+};
 
 // Fonction qui enregistre la direction enregistrée par l'utilisateur et qui vérifie si celle-ci n'est pas contradictoire
 // (si il ne recule pas son snake)
@@ -120,7 +121,7 @@ Snake.prototype.setDirection = function(direction)
         this.direction = direction;
     }
 
-}
+};
 
 // Fonction qui check si il y a une colision entre un snake et un élèment passé en paramètre
 Snake.prototype.hasColision = function (item)
@@ -140,13 +141,13 @@ Snake.prototype.addLength = function ()
     var snakeQueue = this.elements[0];
     this.currentlength = this.currentlength + 30;
     this.elements.unshift ({x: snakeQueue.x, y: snakeQueue.y});
-}
+};
 
 // Fonction qui incrémente le score du nake lorsqu'il a mangé un bonus
 Snake.prototype.eatBonus = function (bonus)
 {
     // vérification si le bonus est un bonus spécial
-    if(bonus.special == true)
+    if(bonus.special === true)
     {
         this.score = this.score + 30;
     }
@@ -155,13 +156,13 @@ Snake.prototype.eatBonus = function (bonus)
         this.score = this.score + 10;
     }
     this.goodies++;
-}
+};
 
 // Fonction qui incrémente le nombre de kills du snake et son score
 Snake.prototype.kill = function ()
 {
     this.score = this.score + 50;
-}
+};
 
 // Fonction qui tue le snake, incrémente son nombre de morts, décrémente son score et appel la fonction reset()
 Snake.prototype.die = function ()
@@ -169,4 +170,4 @@ Snake.prototype.die = function ()
     this.deaths++;
     this.score = this.score - 50;
     this.reset();
-}
+};

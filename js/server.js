@@ -6,14 +6,14 @@ var express = require("express"),
     app = express();
 
 // Constructeur passé en public, disponible dans les autres fichiers
-exports.Server = Server = function ()
+exports.Server = Server = function()
 {
     this.clientId = 1;
 };
 
 
 // Fonction d'initialisation du serveur avec les différents paramètres
-Server.prototype.init = function (port)
+Server.prototype.init = function(port)
 {
     // Creation du serveur
     this.server = http.createServer(app);
@@ -33,7 +33,7 @@ Server.prototype.init = function (port)
 };
 
 // Fonction qui démarre les sockets
-Server.prototype.startSockets = function ()
+Server.prototype.startSockets = function()
 {
     // On écoute le serveur
     this.socket = io.listen(this.server);
@@ -82,14 +82,14 @@ Server.prototype.startSockets = function ()
 };
 
 // Fonction qui envoie les mises à jour des snakes(position, taille, etc) et des bonus (position) vers le client
-Server.prototype.update = function (snakes, bonus)
+Server.prototype.update = function(snakes, bonus)
 {
     this.socket.of('/snake').emit('update', snakes, bonus);
 };
 
 // Fonction qui envoie les notifications d'évènements aux clients
-Server.prototype.updateEvents = function ()
+Server.prototype.updateEvents = function()
 {
     this.socket.of('/snake').emit('updateEvents', events);
-}
+};
 

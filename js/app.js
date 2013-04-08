@@ -40,7 +40,7 @@ s.em.addListener('Snake.changeDirection', function(data)
 var updateSate = function ()
 {
     // pour chaque index dans le tableau qui contient les snakes (chaque snake)
-    for (i in snakes)
+    for (var i in snakes)
     {
         // on deplace leur position
         snakes[i].doStep();
@@ -57,13 +57,13 @@ var updateSate = function ()
 function checkColisions()
 {
     // colision entre les snakes et les bonus
-    for (i in snakes)
+    for (var i in snakes)
     {
         // var snake qui contient le snake en cours
         var snake = snakes[i];
 
 
-        for (j in bonus)
+        for (var j in bonus)
         {
             if(snake.hasColision(bonus[j]))
             {
@@ -78,8 +78,8 @@ function checkColisions()
 
                 // on incrémente la varibale qui contient le nombre de bonus générés
                 newBonus++;
-                // tous les 3 bonus mangées, on génére un bonus spécial
-                if (newBonus % 3 == 0)
+                // tous les 3 bonus mangés, on génère un bonus spécial
+                if (newBonus % 3 === 0)
                 {
                     // on ajoute aléatoirement sur le plateau le bonus spécial
                     addSpecialBonus();
@@ -89,13 +89,13 @@ function checkColisions()
                     // sinon on génère un bonus normal
                     addBonus();
                 }
-                // on break pour la performance de la fonction
+                // on break pour la performance
                 break;
             }
         }
     }
 
-    // Tableau qui va contenir tous les snakes à réinisialiser
+    // Tableau qui va contenir tous les snakes à réinitialiser
     var resetSnakes = [];
 
     // Collision entre les snakes
@@ -104,26 +104,26 @@ function checkColisions()
         // var snake qui contient le snake en cours
         var snake = snakes[i];
 
-        for (var j in snakes)
+        for (var l in snakes)
         {
-            for (var k in snakes[j].elements)
+            for (var k in snakes[l].elements)
             {
                 // si le snake se mange lui-même et que c'est sa tête
-                if (snakes[j].playerId == snake.playerId &&
-                    k == snakes[j].elements.length -1)
+                if (snakes[l].playerId == snake.playerId &&
+                    k == snakes[l].elements.length - 1)
                 {
                     // pour sauter l'itération suivante (le if suivant)
                     continue;
                 }
-                if (snake.hasColision(snakes[j].elements[k]))
+                if (snake.hasColision(snakes[l].elements[k]))
                 {
                     // on met dans le tableau des snakes à réinitialiser le snake qui a eu une colision
                     resetSnakes.push(snake);
 
                     // si le snake est entré en colision avec un autre snake (pas avec lui-même), cela lui donne un kill
-                    if (snakes[j].playerId != snake.playerId)
+                    if (snakes[l].playerId != snake.playerId)
                     {
-                        snakes[j].kill();
+                        snakes[l].kill();
                     }
                 }
             }
@@ -131,11 +131,11 @@ function checkColisions()
     }
 
     // Mort du snake
-    for (var i in resetSnakes)
+    for (var m in resetSnakes)
     {
-        resetSnakes[i].die();
+        resetSnakes[m].die();
     }
-};
+}
 
 // Fonction qui ajoute les bonus au plateau du jeu
 function addBonus()
@@ -145,7 +145,7 @@ function addBonus()
         bonus[i] = new Bonus();
         bonus[i].init();
     }
-};
+}
 
 // Fonction qui ajoute un bonus spécial
 function addSpecialBonus()

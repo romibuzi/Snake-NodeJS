@@ -1,5 +1,6 @@
 {
-  "name": "nodeJS Snake",
+  "name": "nodeJS-Snake",
+  "version": "1.0.0",
   "description": "dependencies for project",
   "author": "Romain Ardiet <romain.ardiet@gmail.com>",
   "dependencies": {

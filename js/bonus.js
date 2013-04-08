@@ -7,7 +7,7 @@ exports.Bonus = Bonus =function()
 };
 
 //  Fonction d'initialisation du bonus
-Bonus.prototype.init = function ()
+Bonus.prototype.init = function()
 {
     // création des valeurs aléatoire comprise entre 0 et 50
     this.y = Math.floor(Math.random() * this.STAGE_HEIGHT);
@@ -16,7 +16,7 @@ Bonus.prototype.init = function ()
 };
 
 // Fonction qui ajoute au bonus un paramètre spécial
-Bonus.prototype.specialBonus = function ()
+Bonus.prototype.specialBonus = function()
 {
     this.special = true;
-}
+};
