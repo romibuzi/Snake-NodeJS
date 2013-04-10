@@ -4,3 +4,8 @@
 Install : <code>npm install -d</code>
 
 Run : <code>./nodemon js/app.js</code>
+
+
+
+<h5>Preview :</h5>
+![Snake-NodeJS](https://github.com/Romibuzi/Snake-NodeJS/master/Screenshot.JPG "")
