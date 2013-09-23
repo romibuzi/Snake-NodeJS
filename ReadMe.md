@@ -3,7 +3,7 @@
 
 Install : <code>npm install -d</code>
 
-Run : <code>./nodemon js/app.js</code>
+Run : <code>node js/app.js</code>
 
 
 
