@@ -8,4 +8,4 @@ Run : <code>node js/app.js</code>
 
 
 <h5>Preview :</h5>
-[![Snake-NodeJS]](Screenshot.JPG)
+[![Snake-NodeJS](Screenshot.JPG)]
