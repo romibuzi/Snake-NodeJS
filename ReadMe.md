@@ -1,11 +1,16 @@
 ## Multiplayer Snake based on Node-JS, Socket IO and Express
 
 
-Install : <code>npm install -d</code>
+### Install 
+```
+$ npm install -d
+```
 
-Run : <code>node js/app.js</code>
+### Run
+``` 
+node js/app.js
+```
 
+### Preview
 
-
-<h5>Preview :</h5>
 ![Snake](Screenshot.JPG)
