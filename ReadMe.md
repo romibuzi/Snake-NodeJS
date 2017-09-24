@@ -8,4 +8,4 @@ Run : <code>node js/app.js</code>
 
 
 <h5>Preview :</h5>
-![Snake-NodeJS](https://raw.github.com/Romibuzi/Snake-NodeJS/master/Screenshot.JPG "")
+[![Snake-NodeJS]](Screenshot.JPG)
